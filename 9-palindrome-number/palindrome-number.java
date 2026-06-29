@@ -9,6 +9,5 @@ class Solution {
             s=s*10+d;
             copy/=10;
         }
-        return s==x;
-    }
+        return s==x;}
 }
