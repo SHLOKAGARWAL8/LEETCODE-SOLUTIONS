@@ -83,7 +83,6 @@ class Solution {
                 hi = mid - 1;
             }
         }
-
         return ans;
     }
 }
