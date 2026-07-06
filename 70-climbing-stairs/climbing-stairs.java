@@ -3,7 +3,7 @@ class Solution {
         int a=0;
         int b=1;
         int s=a+b;
-        for(int i=1;i<=48;i++)
+        for(int i=1;i<=45;i++)
         {
             if(i==n)
             {
