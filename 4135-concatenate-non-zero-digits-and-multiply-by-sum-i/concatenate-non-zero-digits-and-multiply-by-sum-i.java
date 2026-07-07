@@ -1,7 +1,6 @@
 class Solution {
     public long sumAndMultiply(int n) {
         long x=0,d=0,s=0,y=0;
-        long f=0;
         while(n!=0)
         {
             d=n%10;
@@ -18,7 +17,6 @@ class Solution {
             x/=10;
             y=y*10+d;
         }
-        f=y*s;
-        return f;
+        return y*s;
     }
 }
