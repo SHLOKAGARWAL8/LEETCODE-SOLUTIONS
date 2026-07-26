@@ -1,36 +1,33 @@
 class Solution {
     public int maximumProduct(int[] nums) {
-       mergeSort(nums, 0, nums.length - 1);
-        int n = nums.length;
-        return Math.max(nums[n - 1] * nums[n - 2] * nums[n - 3],nums[0] * nums[1] * nums[n - 1]);
-    }
-    private void mergeSort(int[] nums, int left, int right) {
-        if (left >= right) return;
-        int mid = left + (right - left) / 2;
-        mergeSort(nums, left, mid);
-        mergeSort(nums, mid + 1, right);
-        merge(nums, left, mid, right);
-    }
-    private void merge(int[] nums, int left, int mid, int right) {
-        int[] temp = new int[right - left + 1];
-        int i = left;
-        int j = mid + 1;
-        int k = 0;
-        while (i <= mid && j <= right) {
-            if (nums[i] <= nums[j]) {
-                temp[k++] = nums[i++];
-            } else {
-                temp[k++] = nums[j++];
-            }
+        int a = Integer.MIN_VALUE;
+        int b = Integer.MIN_VALUE;
+        int c = Integer.MIN_VALUE;
+        int x = Integer.MAX_VALUE;
+        int y = Integer.MAX_VALUE;
+        for (int i=0;i<nums.length;i++) 
+        {
+            if (nums[i] >= a) 
+            {
+                c = b;
+                b = a;
+                a = nums[i];
+            } 
+            else if (nums[i] >= b) 
+            {
+                c = b;
+                b = nums[i];
+            } 
+            else if (nums[i] > c) 
+                c = nums[i];
+            if (nums[i] <= x) 
+            {
+                y = x;
+                x = nums[i];
+            } 
+            else if (nums[i] < y) 
+                y = nums[i];
         }
-        while (i <= mid) {
-            temp[k++] = nums[i++];
-        }
-        while (j <= right) {
-            temp[k++] = nums[j++];
-        }
-        for (i = 0; i < temp.length; i++) {
-            nums[left + i] = temp[i];
-        }   
+        return Math.max(a * b * c,a * x * y);
     }
 }
