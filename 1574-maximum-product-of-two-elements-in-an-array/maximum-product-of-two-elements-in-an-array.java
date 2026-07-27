@@ -1,17 +1,16 @@
 class Solution {
     public int maxProduct(int[] nums) {
-       int a=0;
-       int max2=0;
+       int a=0,b=0;
        for(int num:nums){
         if(num>a){
-            max2=a;
+            b=a;
             a=num;
         }
-        else if(num>max2){
-            max2=num;
+        else if(num>b){
+            b=num;
         }
        }
-       return (a - 1)*(max2 -1);
+       return (a - 1)*(b -1);
         
     }
 }
