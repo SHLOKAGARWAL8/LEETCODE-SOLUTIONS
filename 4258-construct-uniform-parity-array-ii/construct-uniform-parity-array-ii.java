@@ -11,13 +11,10 @@ class Solution {
             }
         }
 
-        // If all numbers are already odd or all are already even
         if (minOdd == Integer.MAX_VALUE || minEven == Integer.MAX_VALUE) {
             return true;
         }
 
-        // Mixed parity: all even numbers must be
-        // greater than the smallest odd number.
         return minOdd < minEven;
     }
 }
